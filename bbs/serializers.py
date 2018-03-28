@@ -7,7 +7,7 @@ class BbsSerializers(serializers.ModelSerializer):
         fields = ('id', 'title', 'author', 'pw', 'content')
 
     def create(self, validated_data):
-        return Bbs.Objects.create(**validated_data)
+        return Bbs.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
         instance.title = validated_data.get('title', instance.title)
